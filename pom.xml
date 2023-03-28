@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.c0d3m4513r.pom</groupId>
+        <artifactId>plugins</artifactId>
+        <version>0.1.0</version>
+        <relativePath>../plugins/pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.c0d3m4513r.config</groupId>
+    <artifactId>checker</artifactId>
+    <version>1.0.0</version>
+
+    <licenses>
+        <license>
+            <name>All-Rights-Reserved</name>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/Pixel-gaming/config-checker</url>
+        <connection>scm:git</connection>
+    </scm>
+
+    <name>checker</name>
+    <description>Checks if the Loadable annotations from com.c0d3m4513r.config:qual are used properly</description>
+    <url>https://github.com/Pixel-gaming/config-checker</url>
+
+    <developers>
+        <developer>
+            <id>c0d3m4513r</id>
+            <name>C0D3 M4513R</name>
+            <url>https://c0d3m4513r.com/</url>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.c0d3m4513r.config</groupId>
+            <artifactId>qual</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>Config</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.checkerframework</groupId>
+                                <artifactId>checker</artifactId>
+                                <version>${checkerframeworkVersion}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <configuration>
+                    <artifactSet>
+                        <excludes>
+                            <exclude>org.checkerframework:checker-qual</exclude>
+                        </excludes>
+                    </artifactSet>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
