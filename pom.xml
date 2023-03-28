@@ -38,6 +38,16 @@
         </developer>
     </developers>
 
+    <repositories>
+        <repository>
+            <id>c0d3m4513r</id>
+            <name>C0D3M4513R's nexus maven repo - Release and Snapshot</name>
+            <url>https://nexus.c0d3m4513r.com/repository/c0d3m4513r/</url>
+            <snapshots/>
+            <releases/>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>com.c0d3m4513r.config</groupId>
