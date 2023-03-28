@@ -22,4 +22,3 @@ Whilst no rigid license is in place (no License file in the modules and no licen
 This includes any contributions to this Project, including PR's.
 This will allow for specifying a license later on.
 Also in general code ownership shall be settled on a per-module basis.
-A License file in the root of the project does not apply that license to submodules defined in that directories' pom.xml. (e.g. a License file in the root of the repository does not apply to the following directories, because they are submodules in the `/pom.xml` file: `Config`, `config-checker`, `Logger`, `plugins` and `checkerframework`)
