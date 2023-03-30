@@ -21,7 +21,6 @@ void setBuildStatus(String message, String state) {
 }
 
 pipeline {
-    setBuildStatus("Build started", "PENDING")
     agent {
         docker {
             image 'maven:3-eclipse-temurin-8'
@@ -32,6 +31,7 @@ pipeline {
         stage('Build') {
             steps {
                 checkout scm
+                setBuildStatus("Build started", "PENDING")
                 withCredentials([usernamePassword(credentialsId: 'c0d3m4513r-deployment', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                     sh 'mvn -B --settings settings.xml clean deploy -Dusername=$USERNAME -Dpassword=$PASSWORD'
                 }
