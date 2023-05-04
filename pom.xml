@@ -7,13 +7,13 @@
     <parent>
         <groupId>com.c0d3m4513r.pom</groupId>
         <artifactId>plugins</artifactId>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <relativePath>../plugins/pom.xml</relativePath>
     </parent>
 
     <groupId>com.c0d3m4513r.config</groupId>
     <artifactId>checker</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <licenses>
         <license>
@@ -26,7 +26,7 @@
         <connection>scm:git</connection>
     </scm>
 
-    <name>checker</name>
+    <name>config-checker</name>
     <description>Checks if the Loadable annotations from com.c0d3m4513r.config:qual are used properly</description>
     <url>https://github.com/Pixel-gaming/config-checker</url>
 
@@ -94,6 +94,10 @@
                         </excludes>
                     </artifactSet>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
