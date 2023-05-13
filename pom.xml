@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.c0d3m4513r.pom</groupId>
         <artifactId>plugins</artifactId>
-        <version>0.2.0</version>
+        <version>0.2.1</version>
         <relativePath>../plugins/pom.xml</relativePath>
     </parent>
 
@@ -71,7 +71,6 @@
         <dependency>
             <groupId>com.c0d3m4513r.config</groupId>
             <artifactId>qual</artifactId>
-            <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
