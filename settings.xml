@@ -6,12 +6,24 @@
     <pluginGroups/>
     <servers>
         <server>
-            <id>server-deploy</id>
+            <id>server-deploy-release</id>
+            <username>${username}</username>
+            <password>${password}</password>
+        </server>
+        <server>
+            <id>server-deploy-snapshot</id>
             <username>${username}</username>
             <password>${password}</password>
         </server>
     </servers>
-    <mirrors/>
+    <mirrors>
+        <mirror>
+            <id>central-mirror</id>
+            <name>Maven Central Mirror</name>
+            <url>https://nexus.c0d3m4513r.com/repository/maven-central/</url>
+            <mirrorOf>central</mirrorOf>
+        </mirror>
+    </mirrors>
     <proxies/>
     <profiles/>
     <activeProfiles/>
