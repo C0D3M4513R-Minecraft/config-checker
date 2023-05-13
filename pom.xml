@@ -7,13 +7,17 @@
     <parent>
         <groupId>com.c0d3m4513r.pom</groupId>
         <artifactId>plugins</artifactId>
-        <version>0.2.0</version>
+        <version>0.2.1</version>
         <relativePath>../plugins/pom.xml</relativePath>
     </parent>
 
+    <properties>
+        <snapshot/>
+    </properties>
+
     <groupId>com.c0d3m4513r.config</groupId>
     <artifactId>checker</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.1${snapshot}</version>
 
     <licenses>
         <license>
@@ -48,11 +52,25 @@
         </repository>
     </repositories>
 
+    <distributionManagement>
+        <repository>
+            <id>server-deploy-release</id>
+            <name>C0D3 M4513R's nexus maven repo</name>
+            <url>https://nexus.c0d3m4513r.com/repository/c0d3m4513r-Releases/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </repository>
+        <snapshotRepository>
+            <id>server-deploy-snapshot</id>
+            <name>C0D3 M4513R's nexus maven repo snapshots</name>
+            <url>https://nexus.c0d3m4513r.com/repository/c0d3m4513r-SNAPSHOT/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>com.c0d3m4513r.config</groupId>
             <artifactId>qual</artifactId>
-            <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
